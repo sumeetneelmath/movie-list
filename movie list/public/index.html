@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 My Movie List</h1>
+            <p>Manage your favorite movies</p>
+        </header>
+
+        <!-- Add/Edit Movie Form -->
+        <section class="form-section">
+            <h2 id="form-title">Add New Movie</h2>
+            <form id="movie-form">
+                <input type="hidden" id="movie-id">
+                
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" required placeholder="Enter movie title">
+                </div>
+
+                <div class="form-group">
+                    <label for="director">Director</label>
+                    <input type="text" id="director" required placeholder="Enter director name">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" id="year" required placeholder="2024" min="1888" max="2100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <input type="text" id="genre" required placeholder="Action, Drama, etc.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rating">Rating (0-10)</label>
+                        <input type="number" id="rating" step="0.1" min="0" max="10" placeholder="7.5">
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Add Movie</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-btn" style="display: none;">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Movie List -->
+        <section class="movies-section">
+            <h2>Movie Collection</h2>
+            <div id="loading" class="loading" style="display: none;">Loading movies...</div>
+            <div id="error-message" class="error" style="display: none;"></div>
+            <div id="movies-list" class="movies-grid"></div>
+            <div id="empty-state" class="empty-state" style="display: none;">
+                <p>No movies yet. Add your first movie above!</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
