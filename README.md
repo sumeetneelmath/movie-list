@@ -1,67 +1,66 @@
-# 🎬 Movie List CRUD Application
+# Movie List App
 
-## 📖 Introduction
-The Movie List CRUD Application is a web-based system developed to manage movie records efficiently.  
-CRUD stands for **Create, Read, Update, and Delete**, which are the four basic operations performed on data.  
-This project helps students understand **full-stack development concepts**, database connectivity, and RESTful operations.
+A simple CRUD web application for managing your movie collection, built with Node.js, Express, MongoDB, and vanilla JavaScript.
 
----
+## Features
+- ✅ Add new movies with details (Title, Director, Year, Genre, Rating)
+- 📋 View all movies in a responsive grid layout
+- ✏️ Edit existing movie information
+- ⭐ Rate movies (0-10 scale)
+- 🗑️ Delete movies from your collection
 
-## 🎯 Objectives
-- To develop a simple movie management system  
-- To implement CRUD operations using a web application  
-- To understand frontend and backend interaction  
-- To work with databases for persistent data storage  
+## Prerequisites
+- Node.js (v14 or higher)
+- MongoDB (running locally on port 27017)
 
----
+## Installation
 
-## ✨ Features
-- User-friendly interface  
-- Add new movie details  
-- Display list of movies  
-- Edit existing movie information  
-- Delete movie records  
-- Data stored permanently in database  
+1. Make sure MongoDB is running locally on `mongodb://localhost:27017`
 
----
+2. Install dependencies:
+```bash
+npm install
+```
 
-## 🧾 Movie Attributes
-Each movie record contains:
-- Movie Name  
-- Genre  
-- Language  
-- Release Year  
-- Director Name  
-- Rating  
+## Running the Application
 
----
+Start the server:
+```bash
+npm start
+```
 
-## 🛠️ Technology Stack
-### Frontend
-- HTML5  
-- CSS3  
-- JavaScript  
+The application will be available at: http://localhost:3000
 
-### Backend
-- Python with Flask framework  
+## Project Structure
+```
+movie-list/
+├── models/
+│   └── Movie.js          # MongoDB schema for movies
+├── public/
+│   ├── index.html        # Frontend HTML
+│   ├── app.js           # Frontend JavaScript
+│   └── style.css        # Styling
+├── server.js            # Express server & API routes
+└── package.json
+```
 
-### Database
-- SQLite / MongoDB  
+## API Endpoints
 
-### Tools
-- Visual Studio Code  
-- Git & GitHub  
-- Web Browser  
+- `GET /api/movies` - Get all movies
+- `GET /api/movies/:id` - Get a single movie
+- `POST /api/movies` - Create a new movie
+- `PUT /api/movies/:id` - Update a movie
+- `DELETE /api/movies/:id` - Delete a movie
 
----
+## Usage
 
-## 🏗️ System Architecture
-1. User interacts with the web interface  
-2. Requests are sent to the Flask server  
-3. Backend processes the request  
-4. Database performs CRUD operation  
-5. Response is sent back to the user  
+1. **Add a Movie**: Fill out the form at the top with movie details and click "Add Movie"
+2. **View Movies**: All movies are displayed in cards below the form
+3. **Edit a Movie**: Click the "Edit" button on any movie card to load it into the form
+4. **Delete a Movie**: Click the "Delete" button and confirm to remove a movie
 
----
-
-## 📂 Project Structure
+## Technologies Used
+- **Backend**: Node.js, Express.js, Mongoose
+- **Database**: MongoDB
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript
+- **API**: RESTful API with JSON
